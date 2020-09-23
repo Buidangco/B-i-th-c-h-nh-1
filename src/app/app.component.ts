@@ -27,9 +27,6 @@ export class AppComponent {
   }
 //Bài 2
 
-ngOnInit(): void {
-
-}
 tinh1(){
   let tmp=1;
   for(let i=1;i<=this.n;++i){
@@ -37,6 +34,37 @@ tinh1(){
   }
 }
 
+//Bài 3
+ngOnInit(): void {
+  let catten = (s) => {
+    let n = s.lastIndexOf(' ');
+    return s.substr(n + 1) + ' ' + s.substr(0, n);
+  }
+  let s = [{ hoten: 'Nguyen Thi Mai', dthi: 9 },
+  { hoten: 'Tran Thi Anh', dthi: 7.5 },
+  { hoten: 'Hoang Thi Dung', dthi: 8.3 }
+  ].sort((a, b) => {
+    if (catten(a.hoten) > catten(b.hoten)) return 1;
+    else if (catten(a.hoten) < catten(b.hoten)) return -1;
+    return 0;
+  });
+  console.log(s);
+
+  //Bài 4
+  let d = [{ hoten: 'Nguyen Thi Mai',quequan:'Hung Yen', dthi: 9 },
+    { hoten: 'Tran Thi Anh',quequan:'Ha Noi ', dthi: 7.5 },
+    { hoten: 'Hoang Thi Dung',quequan:'Hai Phong', dthi: 8.3 }
+    ].filter(x=>x.dthi>=8 && x.quequan=='Hai Phong');
+    console.log(d);
+
+    //Bài 5
+
+    let sochinhphuong = (n) =>{
+      return   Math.pow(Math.floor(Math.sqrt(n)),2)==n;
+    }
+    let y = [3,4,8,10,25,55].filter(sochinhphuong);
+    console.log(y);
+}
 }
 function Giaithua(a: number) {
 let gt=1;
@@ -45,15 +73,7 @@ for (let i = 1; i <=a; i++) {
 }
 return gt;
 
-  // xapxep(){
-  //   for (this.i = 1; this.i < this.Danhsach.length; this.i++) {
-  //     for (this.j = 1; this.j < this.Danhsach.length; this.j++) {
-  //        if (strcmp(this.Danhsach[this.j - 1], this.Danhsach[this.j]) > 0) {
-  //           strcpy(this.Danhsach, this.Danhsach[this.j - 1]);
-  //           strcpy(this.Danhsach[this.j - 1], this.Danhsach[this.j]);
-  //           strcpy(this.Danhsach[this.j], this.Danhsach);
-  //        }
-  //     }
-  //  }
-  // }
+
+
+
 }

@@ -5,7 +5,7 @@
   <p>Nhập N</p>
   <input type="text" #idN value="" placeholder="N...">
   <button (click)="tinh(idX.value,idN.value)">Tính</button>
-  <div>Giá Trị tổng là :{{s}}</div>
+  <h3>Giá Trị tổng là :{{s}}</h3>
 </div>
 <div style="color: black;font-size: 50px;">Bài toán 2</div>
 
@@ -31,3 +31,18 @@
         <button type="button" class="btn btn-primary" (click)="tinh1()">Tính</button>
     </div>
     <h3>Kết quả: {{tong}}</h3>
+
+<div style="color: black;font-size: 50px;">Danh sách </div>
+
+<ng-container >
+  <table>
+    <tr>
+      <th style="    border: 1px solid;    width: 150px;">Tên</th>
+      <th style="    border: 1px solid;    width: 150px;">Điểm</th>
+    </tr>
+      <tr *ngFor="let ds of Danhsach">
+        <th style="    border: 1px solid;    width: 150px;">{{ds.hoten}}</th>
+        <th style="    border: 1px solid;    width: 150px;">{{ds.diemthi}}</th>
+      </tr>
+  </table>
+</ng-container>
