@@ -18,13 +18,18 @@ export class AppComponent {
     {hoten: 'Tran Thi Anh', diemthi:7.5},
     { hoten: 'Hoang Thi Dung', diemthi:8.3}
   ]
-  //bai1
+
+
+//bai1
   tinh(sox:string,soL:string){
     for(this.i=1;this.i<=parseFloat(soL);this.i++)
     {
     this.s =this.s+Math.pow(parseFloat(sox),this.i)
     }
   }
+
+
+
 //Bài 2
 
 tinh1(){
@@ -34,8 +39,26 @@ tinh1(){
   }
 }
 
+
+
+
+//Bài 6
+public tongduong(n:number[]){
+  let S=0;
+for(let i=0; i<n.length;i++){
+if(n[i]>=0){
+  S+=n[i];
+} else continue;
+}return S;
+}
+tong1=0;
+dayso=[-9,-8,-7,-6,-5,-4,-3,-2,-1,0,1,2,3,4,5,6,7,8,9,10,243]
+
+
+
 //Bài 3
 ngOnInit(): void {
+  this.tong1=this.tongduong(this.dayso);
   let catten = (s) => {
     let n = s.lastIndexOf(' ');
     return s.substr(n + 1) + ' ' + s.substr(0, n);
@@ -50,14 +73,18 @@ ngOnInit(): void {
   });
   console.log(s);
 
-  //Bài 4
+
+
+//Bài 4
   let d = [{ hoten: 'Nguyen Thi Mai',quequan:'Hung Yen', dthi: 9 },
     { hoten: 'Tran Thi Anh',quequan:'Ha Noi ', dthi: 7.5 },
     { hoten: 'Hoang Thi Dung',quequan:'Hai Phong', dthi: 8.3 }
     ].filter(x=>x.dthi>=8 && x.quequan=='Hai Phong');
     console.log(d);
 
-    //Bài 5
+
+
+//Bài 5
 
     let sochinhphuong = (n) =>{
       return   Math.pow(Math.floor(Math.sqrt(n)),2)==n;
